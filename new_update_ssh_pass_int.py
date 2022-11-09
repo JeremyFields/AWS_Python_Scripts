@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # Authored by: Jeremy Fields
-# Script Name: update_ssh_pass_int.py
+# Script Name: update_pub_key_int.py
 # Purpose: Updates internal SFTP user's public key in AWS Transfer Family
 # Create Date: 11/9/2022
 # Version: 2.0.0
@@ -115,7 +115,6 @@ def set_public_key():
             logger.error(f"Public key already exists!")
             raise e
 
-
 def remove_oldest_key(public_keys):
     ''' Removes the oldest key '''
     dates = []
@@ -141,7 +140,6 @@ def remove_oldest_key(public_keys):
                 if e.response['Error']['Code'] == 'ResourceNotFoundException':
                     logger.error(f"Error when removing public key: {e}")
                     raise e
-
 
 def update_status(arn):
     ''' If acct is locked, set to ACTIVE '''
@@ -185,7 +183,6 @@ def email_user(email_address):
     email_body = f"New public key for user: '{args.username}'\n\nPublic key: {args.pub_key}"
     os.system(f"/bin/python3 {email_script} noreply-sftpteam@xxxx.com {email_address} \
                 '{args.username} - SSH key updated' '{email_body}\n{email_append}'")
-    
 
 # # # *****************************************************************************
 # # main
