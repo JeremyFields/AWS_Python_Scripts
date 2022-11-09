@@ -185,7 +185,7 @@ def email_user(email_address):
                 '{args.username} - SSH key updated' '{email_body}\n{email_append}'")
 
 # # # *****************************************************************************
-# # main
+# Main
 
 def main():
     current_public_keys = get_public_keys()
