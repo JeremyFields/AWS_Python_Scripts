@@ -30,7 +30,7 @@ log_group = f'/aws/lambda/{lambda_name}'
 # Email
 email_receiver = 'jeremy.fields@xxxx.com'
 email_sender = 'noreply-sftpteam@xxxx.com'
-email_append = '\nPlease contact the Choice Hotels SFTP team for support.\n\nSFTPTeam@xxxx.com'
+email_append = '\nPlease contact the SFTP team for support.\n\nSFTPTeam@xxxx.com'
 # Time
 now = datetime.utcnow()
 start_time = now - timedelta(hours=1)
