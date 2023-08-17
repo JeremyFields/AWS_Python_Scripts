@@ -191,7 +191,7 @@ def email_team(server_id, key_id, username, status):
     # Set email variables
     email_script = '/home/ec2-user/scripts/dev/common_code/mailsend.py'
     email_address = 'SFTPTeam@xxx.com'
-    email_append = '\nPlease contact the Choice Hotels SFTP team for support.\n\nSFTPTeam@xxx.com'
+    email_append = '\nPlease contact the SFTP team for support.\n\nSFTPTeam@xxx.com'
     # email new pub key to SFTP team.
     email_body = (f"New SSH key for user: '{username}'\n\nSSH key: {args.ssh_key}\n\n \
         Key ID: {key_id}\n\nServer ID: {server_id}\n\nStatus: {status}")
@@ -204,7 +204,7 @@ def email_user(email_address):
     '''
     # Set email variables
     email_script = '/home/ec2-user/scripts/dev/common_code/mailsend.py'
-    email_append = '\nPlease contact the Choice Hotels SFTP team for support.\n\nSFTPTeam@xxx.com'
+    email_append = '\nPlease contact the SFTP team for support.\n\nSFTPTeam@xxx.com'
     # email new pub key to user
     email_body = f"New SSH key for user: '{args.username}'\n\nSSH key: {args.ssh_key}"
     os.system(f"/bin/python3 {email_script} noreply-SFTPTeam@xxx.com {email_address} \
